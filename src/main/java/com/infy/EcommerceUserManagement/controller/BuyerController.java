@@ -12,12 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.infy.EcommerceUserManagement.model.Buyer;
 import com.infy.EcommerceUserManagement.service.BuyerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 public class BuyerController {
 
 	@Autowired
 	BuyerService buyerservice;
+    
+	private static final Logger LOGGER = LoggerFactory.getLogger(BuyerController.class);
+
+
 	
 
 	
@@ -46,6 +52,7 @@ public class BuyerController {
 	  
 	  @GetMapping(value = "api/rewardPoint")
 	  public int getRewardPoints(@RequestParam(name = "buyerId") int buyerId) {
+		  LOGGER.info("I am inside reward point api");
 		  return buyerservice.getRewardPoint(buyerId);
 		  
 		  
