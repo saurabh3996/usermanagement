@@ -1,6 +1,5 @@
 package com.infy.EcommerceUserManagement.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +13,9 @@ import com.infy.EcommerceUserManagement.model.Buyer;
 import com.infy.EcommerceUserManagement.service.BuyerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.HashMap;
+import java.util.Map;
+
 
 @RestController
 public class BuyerController {
@@ -22,12 +24,7 @@ public class BuyerController {
 	BuyerService buyerservice;
     
 	private static final Logger LOGGER = LoggerFactory.getLogger(BuyerController.class);
-
-
 	
-
-	
-
 	@PostMapping(value = "api/buyer/register")
 	public String registerBuyer(@RequestBody Buyer buyer) {
 		
@@ -52,6 +49,7 @@ public class BuyerController {
 	  
 	  @GetMapping(value = "api/rewardPoint")
 	  public int getRewardPoints(@RequestParam(name = "buyerId") int buyerId) {
+		
 		  LOGGER.info("I am inside reward point api");
 		  return buyerservice.getRewardPoint(buyerId);
 		  
