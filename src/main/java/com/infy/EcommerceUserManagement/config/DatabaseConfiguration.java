@@ -50,15 +50,6 @@ public class DatabaseConfiguration {
     }
 
 
-    @Primary
-    @Bean(name = "dbSessionFactory")
-    public LocalSessionFactoryBean dbSessionFactory() {
-        LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
-        sessionFactoryBean.setDataSource(awsDataSource());
-        sessionFactoryBean.setPackagesToScan(PACKAGE_SCAN);
-        sessionFactoryBean.setHibernateProperties(hibernateProperties());
-        return sessionFactoryBean;
-    }
 
     @Bean(name = "customEntityManager")
     public LocalContainerEntityManagerFactoryBean customEntityManager() {
