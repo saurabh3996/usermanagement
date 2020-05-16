@@ -33,7 +33,7 @@ public class BuyerEntity {
 	@Column(name = "isprivileged")
 	private boolean isPrivileged;
 	
-	@Column(name = "rewardpoints",nullable = true)
+	@Column(name = "rewardpoints")
 	private int rewardPoints;
 	
 	@Column(name = "isactive")
