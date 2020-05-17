@@ -144,7 +144,7 @@ public class BuyerService {
 	
 	public void updateRewardPoint(int buyerId, int point) {
 		BuyerEntity buyerEntity =buyerRepository.findByBuyerId(buyerId);
-		buyerEntity.setRewardPoints(point+buyerEntity.getRewardPoints());
+		buyerEntity.setRewardPoints(point);
 		buyerRepository.save(buyerEntity);
 		
 	}

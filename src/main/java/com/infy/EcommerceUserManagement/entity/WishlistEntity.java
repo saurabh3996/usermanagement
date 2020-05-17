@@ -8,6 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "wishlist")
 public class WishlistEntity {
+	
 	@EmbeddedId
 	private WishListId id;
 

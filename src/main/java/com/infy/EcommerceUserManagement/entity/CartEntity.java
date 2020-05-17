@@ -11,6 +11,7 @@ public class CartEntity {
 	@EmbeddedId
 	private CartId cartId;
 	
+	
 	private int quantity;
 	
 	public CartEntity(CartId cartId, int quantity) {
